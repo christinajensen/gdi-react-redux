@@ -11,8 +11,7 @@ class ButtonToggle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggledOn: true,
-      count: 0
+      toggledOn: false
     };
 
     this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -23,8 +22,7 @@ class ButtonToggle extends React.Component {
   handleButtonClick() {
     this.setState(prevState => {
       return {
-        toggledOn: !prevState.toggledOn,
-        count: prevState.count + 1
+        toggledOn: !prevState.toggledOn
       }
     });
   }
@@ -33,14 +31,11 @@ class ButtonToggle extends React.Component {
   render() {
     return (
       <div className="ButtonToggle">
-        <button onClick={ this.handleButtonClick }>{this.state.toggledOn ? 'Like' : 'Unlike'}>{ this.state.count }</button>
+        <button onClick={ this.handleButtonClick }>{ this.state.toggledOn ? 'On' : 'Off' }</button>
       </div>
     )
   }
 }
-
-
-
 
 // don't forget to export your component!
 export default ButtonToggle;
