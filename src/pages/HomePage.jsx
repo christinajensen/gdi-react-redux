@@ -6,7 +6,7 @@ const HomePage = () => {
 	return (
 		<div className="HomePage">
 			<Form />
-			<FeedList />
+      <FeedList />
 		</div>
 	);
 };

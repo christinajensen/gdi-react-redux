@@ -1,23 +1,22 @@
 import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './components/Header.jsx';
-import Image from './components/Image.jsx';
-import HelloWorld from './components/HelloWorld.jsx';
-import ButtonToggle from './components/ButtonToggle.jsx';
-import Form from './components/Form.jsx';
+import HomePage from './pages/HomePage.jsx';
+import ProfilePage from './pages/ProfilePage.jsx';
 
 // write a functional component
 // make it a div with a class name of App
 class App extends React.Component {
   render () {
     return (
-      <div className="App">
-        <Header />
-        <Image imageURL="https://www.petfinder.com/wp-content/uploads/2012/11/91615172-find-a-lump-on-cats-skin-632x475.jpg" />
-        <HelloWorld />
-        <ButtonToggle />
-        <Form />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <Route exact path="/" component={ HomePage } />
+          <Route exact path="/profile" component={ ProfilePage } />
+        </div>
+      </BrowserRouter>
     )
   }
 }
