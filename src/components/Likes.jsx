@@ -12,8 +12,6 @@ class Likes extends React.Component {
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
-  // create a function called handleButtonClick that will toggle your state on and off
-    // remember setState accepts a callback function, the first argument is the previous state
   handleButtonClick() {
     this.setState(prevState => {
       return {
@@ -22,7 +20,6 @@ class Likes extends React.Component {
     });
   }
 
-  // create a button that toggles 'On' and 'Off'
   render() {
     return (
       <div className="Likes">

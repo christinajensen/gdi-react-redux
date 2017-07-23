@@ -1,11 +1,5 @@
 import React from 'react';
 
-// create a class component that toggles a button on and off
-  // add in your constructor
-    // don't forget to call super!
-    // set your initial state in here
-    // don't forget to bind your functions to the correct 'this'!
-
 class ButtonToggle extends React.Component {
   constructor(props) {
     super(props);
@@ -16,8 +10,6 @@ class ButtonToggle extends React.Component {
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
-  // create a function called handleButtonClick that will toggle your state on and off
-    // remember setState accepts a callback function, the first argument is the previous state
   handleButtonClick() {
     this.setState((prevState, props) => { // setState takes in 2 callbacks: prevState and props
       return {
@@ -26,7 +18,6 @@ class ButtonToggle extends React.Component {
     });
   }
 
-  // create a button that toggles 'On' and 'Off'
   render() {
     return (
       <div className="ButtonToggle">
@@ -36,5 +27,4 @@ class ButtonToggle extends React.Component {
   }
 }
 
-// don't forget to export your component!
 export default ButtonToggle;

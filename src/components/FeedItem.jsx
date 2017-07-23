@@ -13,6 +13,7 @@ class FeedItem extends React.Component {
   }
 }
 
+// Functional Component:
 // const FeedItem = ({ photo }) => {
 //   const { url, likes, id, userLiked } = photo;
 //   return (
