@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 // create a form component
 
-class Form extends React.Component {
+class Form extends Component {
 // it should contain an input and a submit button
 // on submit, just log whatever value is contained in the input to the console
 // add in the class name "Form" to get the proper styling
@@ -16,15 +16,18 @@ class Form extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  handleFormSubmit(event) {
-    event.preventDefault();
-    console.log(this.state.userInput);
-  }
-
   handleInputChange(event) {
     const value = event.target.value;
     this.setState({
       userInput: value
+    });
+  }
+
+  handleFormSubmit(event) {
+    event.preventDefault();
+    console.log(this.state.userInput);
+    this.setState({
+      userInput: ''
     });
   }
 

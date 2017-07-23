@@ -5,26 +5,20 @@ import FeedItem from './FeedItem.jsx';
 class FeedList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            photos: [
-                        'https://www.petfinder.com/wp-content/uploads/2012/11/91615172-find-a-lump-on-cats-skin-632x475.jpg',
-                        'http://www.rd.com/wp-content/uploads/sites/2/2016/02/06-train-cat-shake-hands.jpg'
-                    ]
-        };
 
         this.buildFeedList = this.buildFeedList.bind(this);
     }
 
     buildFeedList(photos) {
         return photos.map((photo, idx) => {
-            return <FeedItem key={ `${photo}-idx`} image={ photo } />
+            return <FeedItem key={ `${photo}-${idx}`} image={ photo.url } />
         })
     }
 
     render() {
         return (
             <div>
-                { this.buildFeedList(this.state.photos) }
+                { this.buildFeedList(this.props.photos) }
             </div>
         )
     }
